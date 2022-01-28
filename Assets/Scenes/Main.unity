@@ -805,8 +805,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 640382035}
         m_TargetAssemblyTypeName: LoadAndSaveNoDestroy, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 3
+        m_MethodName: LoadHomeLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

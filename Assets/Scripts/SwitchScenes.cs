@@ -18,6 +18,9 @@ public class SwitchScenes : MonoBehaviour
         bootstrap.GetComponent<LoadAndSaveNoDestroy>().LoadLevel(level);
 
     }
-    
+    public void loadHomeScene()
+    {
+        bootstrap.GetComponent<LoadAndSaveNoDestroy>().LoadHomeLevel();
+    }
 
 }

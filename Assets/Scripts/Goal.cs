@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Goal : MonoBehaviour
 {
     public GameObject bootStrapper;
-
+    public int _myLevel;
     public void Start()
     {
         bootStrapper = GameObject.Find("BootStraps");
@@ -17,7 +17,9 @@ public class Goal : MonoBehaviour
         {
             Debug.Log("added to level ++");
             bootStrapper.GetComponent<LoadAndSaveNoDestroy>().Level++;
-            SceneManager.LoadScene("Success", LoadSceneMode.Single);
+            bootStrapper.GetComponent<LoadAndSaveNoDestroy>().IncrimentHighestLevelUnLocked(_myLevel);
+
+           SceneManager.LoadScene("Success", LoadSceneMode.Single);
         }
         else
         {
