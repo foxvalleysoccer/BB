@@ -739,7 +739,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1994269048}
         m_TargetAssemblyTypeName: SwitchScenes, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: loadHomeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1737,6 +1737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bootStrapper: {fileID: 0}
+  _myLevel: 0
 --- !u!64 &917671521
 MeshCollider:
   m_ObjectHideFlags: 0

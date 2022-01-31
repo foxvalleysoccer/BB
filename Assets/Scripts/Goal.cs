@@ -16,7 +16,7 @@ public class Goal : MonoBehaviour
         if (collision.gameObject.name == "Circle")
         {
             Debug.Log("added to level ++");
-            bootStrapper.GetComponent<LoadAndSaveNoDestroy>().Level++;
+           bootStrapper.GetComponent<LoadAndSaveNoDestroy>().Level++;
             bootStrapper.GetComponent<LoadAndSaveNoDestroy>().IncrimentHighestLevelUnLocked(_myLevel);
 
            SceneManager.LoadScene("Success", LoadSceneMode.Single);

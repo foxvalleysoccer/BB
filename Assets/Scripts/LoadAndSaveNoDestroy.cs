@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class LoadAndSaveNoDestroy : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int Level = 0;
+    public int Level = 1;
     public int HighestLevelUnLocked = 1;
     void Start()
     {
@@ -34,7 +34,9 @@ public class LoadAndSaveNoDestroy : MonoBehaviour
     }
     public void IncrimentHighestLevelUnLocked(int levelJustPlayed)
     {
-        if (levelJustPlayed > HighestLevelUnLocked)
+        //if level is unlocked
+
+        if (levelJustPlayed >= HighestLevelUnLocked)
         {
             HighestLevelUnLocked++;
         }

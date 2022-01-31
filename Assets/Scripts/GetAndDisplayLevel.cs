@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GetAndDisplayLevel : MonoBehaviour
 {
     public GameObject bootstrap;
@@ -10,7 +11,14 @@ public class GetAndDisplayLevel : MonoBehaviour
     private void Start()
     {
         bootstrap = GameObject.Find("BootStraps");
-        levelText.text = "Level "+bootstrap.GetComponent<LoadAndSaveNoDestroy>().Level+1;
+        if (bootstrap == null)
+        {
+            SceneManager.LoadScene("Main");
+        }
+        else
+        {
+            levelText.text = "Level " + bootstrap.GetComponent<LoadAndSaveNoDestroy>().Level;
+        }
     }
     public void DisplayLevel()
     {
@@ -19,6 +27,6 @@ public class GetAndDisplayLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

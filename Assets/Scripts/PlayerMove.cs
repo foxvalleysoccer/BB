@@ -32,7 +32,7 @@ public class PlayerMove : MonoBehaviour
             playerOldVel = myRigidbody.velocity;
             // Vector3 target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f));
             Vector3 target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 0, 0));
-            transform.Translate(Vector3.MoveTowards(transform.position, new Vector3(target.x, transform.position.y, -1.0f), moveSpeed * Time.deltaTime) - transform.position);
+            transform.Translate(Vector3.MoveTowards(transform.position, new Vector3(target.x, transform.position.y, 0), moveSpeed * Time.deltaTime) - transform.position);
             // Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             //  transform.Translate(mousePos);
@@ -54,7 +54,7 @@ public class PlayerMove : MonoBehaviour
             }
             // Debug.Log("lastPosition" + lastPosition);
             // Debug.Log("transform.position" + transform.position);
-            Debug.Log("localDirection.x = " + localDirection.x);
+          //  Debug.Log("localDirection.x = " + localDirection.x);
             //lastPosition = transform.position;
 
 
@@ -62,6 +62,7 @@ public class PlayerMove : MonoBehaviour
         else
         {
             moveDirection = PlayerMove.direction.Strait;
+           
         }
     }
 

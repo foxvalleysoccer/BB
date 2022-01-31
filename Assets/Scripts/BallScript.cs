@@ -44,6 +44,9 @@ public class BallScript : MonoBehaviour
             }
 
 
+        }else if (collision.gameObject.name == "RightWall" || collision.gameObject.name == "LeftWall")
+        {
+            myRigidbody.velocity = oldVel * 1.05f;
         }
     }
 
