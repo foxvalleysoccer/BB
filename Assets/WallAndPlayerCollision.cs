@@ -12,7 +12,7 @@ public class WallAndPlayerCollision : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
+      //  Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "Player")
         {
             player.GetComponent<PlayerManager>().PlayerHit(this.gameObject.name);

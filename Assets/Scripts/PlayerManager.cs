@@ -22,13 +22,15 @@ public class PlayerManager : MonoBehaviour
         player_LeftOuterBrick = GameObject.Find("5");
 
         bootStrapper = GameObject.Find("BootStraps");
+        Debug.Log("Player LengthAt Start"+bootStrapper.GetComponent<PlayerLengthManager>().playerLength);
         if (bootStrapper == null)
         {
             Debug.Log("FIS THIS NOW");
         }
         else
         {
-            SetPlayerLength();
+          //  Debug.Log("called it in else");
+            StartCoroutine(SetPlayerLength());
         }
     }
     public void PlayerHit(string wall)
@@ -42,10 +44,11 @@ public class PlayerManager : MonoBehaviour
         //  this.transform.localScale -= scalechange;
         bootStrapper.GetComponent<PlayerLengthManager>().playerLength -= 1;
 
-       StartCoroutine(SetPlayerLength());
+        StartCoroutine(SetPlayerLength());
     }
-     IEnumerator SetPlayerLength()
+    IEnumerator SetPlayerLength()
     {
+      //  Debug.Log("Player LengthAt Start" + bootStrapper.GetComponent<PlayerLengthManager>().playerLength);
         if (bootStrapper.GetComponent<PlayerLengthManager>().playerLength == 5)
         {
             player_CenterBrick.SetActive(true);
@@ -53,21 +56,33 @@ public class PlayerManager : MonoBehaviour
             player_LeftOuterBrick.SetActive(true);
             player_LeftCenterBrick.SetActive(true);
             player_RightCenterBrick.SetActive(true);
+          //  Debug.Log("Player LengthAt Start in 5 if =" + bootStrapper.GetComponent<PlayerLengthManager>().playerLength);
         }
         else if (bootStrapper.GetComponent<PlayerLengthManager>().playerLength == 4)
         {
             player_RightOuterBrick.SetActive(false);
+            player_CenterBrick.SetActive(true);
+            player_LeftOuterBrick.SetActive(true);
+            player_LeftCenterBrick.SetActive(true);
+            player_RightCenterBrick.SetActive(true);
+           // Debug.Log("Player LengthAt Start in 4 if =" + bootStrapper.GetComponent<PlayerLengthManager>().playerLength);
         }
         else if (bootStrapper.GetComponent<PlayerLengthManager>().playerLength == 3)
         {
             player_RightOuterBrick.SetActive(false);
             player_LeftOuterBrick.SetActive(false);
+            player_CenterBrick.SetActive(true);
+            player_LeftCenterBrick.SetActive(true);
+            player_RightCenterBrick.SetActive(true);
+           // Debug.Log("Player LengthAt Start in 3 if =" + bootStrapper.GetComponent<PlayerLengthManager>().playerLength);
         }
         else if (bootStrapper.GetComponent<PlayerLengthManager>().playerLength == 2)
         {
             player_RightOuterBrick.SetActive(false);
             player_LeftOuterBrick.SetActive(false);
             player_LeftCenterBrick.SetActive(false);
+            player_CenterBrick.SetActive(true);
+            player_RightCenterBrick.SetActive(true);
         }
         else if (bootStrapper.GetComponent<PlayerLengthManager>().playerLength == 1)
         {
@@ -75,7 +90,9 @@ public class PlayerManager : MonoBehaviour
             player_LeftOuterBrick.SetActive(false);
             player_LeftCenterBrick.SetActive(false);
             player_RightCenterBrick.SetActive(false);
-        }else if (bootStrapper.GetComponent<PlayerLengthManager>().playerLength <= 0)
+            player_CenterBrick.SetActive(true);
+        }
+        else if (bootStrapper.GetComponent<PlayerLengthManager>().playerLength <= 0)
         {
 
             Debug.Log("Game Over");
