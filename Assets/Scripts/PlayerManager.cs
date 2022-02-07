@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
         player_LeftOuterBrick = GameObject.Find("5");
 
         bootStrapper = GameObject.Find("BootStraps");
-        Debug.Log("Player LengthAt Start"+bootStrapper.GetComponent<PlayerLengthManager>().playerLength);
+        //Debug.Log("Player LengthAt Start"+bootStrapper.GetComponent<PlayerLengthManager>().playerLength);
         if (bootStrapper == null)
         {
             Debug.Log("FIS THIS NOW");

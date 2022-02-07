@@ -26,22 +26,23 @@ namespace josh
                 if (collision.gameObject.GetComponent<PlayerMove>().moveDirection == PlayerMove.direction.Left)
                 {
                     oldVel.x += 3;
-                    myRigidbody.velocity = -oldVel;
-                  //  myRigidbody.velocity = -oldVel * 1.2f;
-                    Debug.Log("Sending ball Left");
+                   // myRigidbody.velocity = -oldVel;
+                   myRigidbody.velocity = -oldVel * 1.2f;
+                   // Debug.Log("Sending ball Left");
 
                 }
                 else if (collision.gameObject.GetComponent<PlayerMove>().moveDirection == PlayerMove.direction.Right)
                 {
                     oldVel.x -= 3;
-                    myRigidbody.velocity = -oldVel;
-                  //  myRigidbody.velocity = -oldVel * 1.2f;
-                    Debug.Log("Sending ball right");
+                   // myRigidbody.velocity = -oldVel;
+                   myRigidbody.velocity = -oldVel * 1.2f;
+                  //  Debug.Log("Sending ball right");
                 }
                 else
                 {
-                    myRigidbody.velocity = -oldVel * 1.2f;
-                    Debug.Log("Sending ball strait");
+                    //myRigidbody.velocity = -oldVel;
+                    myRigidbody.velocity = -oldVel * 1.3f;
+                   // Debug.Log("Sending ball strait");
                 }
 
 
