@@ -3043,6 +3043,8 @@ MonoBehaviour:
   lastPosition: {x: 0, y: 0, z: 0}
   localDirection: {x: 0, y: 0, z: 0}
   moveDirection: 0
+  ball: {fileID: 0}
+  ballPos: {fileID: 0}
 --- !u!54 &946842406
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -31,6 +31,11 @@ public class LoadAndSaveNoDestroy : MonoBehaviour
         {
             SceneManager.LoadScene("Level3");
         }
+        else if (_level == 4)
+        {
+            SceneManager.LoadScene("Level4");
+        }
+
     }
     public void IncrimentHighestLevelUnLocked(int levelJustPlayed)
     {

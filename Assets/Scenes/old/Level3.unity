@@ -4851,6 +4851,8 @@ MonoBehaviour:
   lastPosition: {x: 0, y: 0, z: 0}
   localDirection: {x: 0, y: 0, z: 0}
   moveDirection: 0
+  ball: {fileID: 0}
+  ballPos: {fileID: 0}
 --- !u!65 &2139572139
 BoxCollider:
   m_ObjectHideFlags: 0
