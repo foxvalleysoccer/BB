@@ -37,21 +37,18 @@ namespace josh
             if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 playerOldVel = myRigidbody.velocity;
-                // Vector3 target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f));
                 Vector3 target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 0, 0));
-              //  transform.Translate(Vector3.MoveTowards(transform.position, new Vector3(target.x, transform.position.y, 0), moveSpeed * Time.deltaTime) - transform.position);
-                // Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
 
                 if (distanceBetween > 15)
                 {
-                    Debug.Log("Over 10 Moveng player");
-                    transform.Translate(Vector3.MoveTowards(transform.position, new Vector3(target.x, transform.position.y + .5f, 0), moveSpeed * Time.deltaTime) - transform.position);
+                    transform.Translate(Vector3.MoveTowards(transform.position, new Vector3(this.transform.position.x, transform.position.y + .5f, 0), moveSpeed * Time.deltaTime) - transform.position);
                 }
                 else
                 {
                     transform.Translate(Vector3.MoveTowards(transform.position, new Vector3(target.x, transform.position.y, 0), moveSpeed * Time.deltaTime) - transform.position);
                 }
-                //  transform.Translate(mousePos);
+
 
 
                 //this is to set the reboud direction of the ball
@@ -75,7 +72,7 @@ namespace josh
             {
                 if (distanceBetween > 15)
                 {
-                    Debug.Log("Over 10 Moveng player");
+                   // Debug.Log("Over 10 Moveng player");
                     transform.Translate(Vector3.MoveTowards(transform.position, new Vector3(0, transform.position.y + .5f, 0), moveSpeed * Time.deltaTime) - transform.position);
                 }
                 moveDirection = PlayerMove.direction.Strait;

@@ -26,4 +26,9 @@ public class GetAndShowPlayerLength : MonoBehaviour
             gamepieces[i].SetActive(true);
         }
     }
+    public void powerUpForTesting()
+    {
+        bootstrap.GetComponent<PlayerLengthManager>().playerLength = 5;
+        DisplayGamePieces();
+    }
 }
